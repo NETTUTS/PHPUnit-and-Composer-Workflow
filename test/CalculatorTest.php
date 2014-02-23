@@ -17,6 +17,14 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     ];
   }
 
+  public function inputNumbersForSubstract()
+  {
+      return [
+          [2, 2, 0],
+          [-20, -5, -15]
+      ];
+  }
+  
   /**
    * @dataProvider inputNumbers
    */
@@ -32,5 +40,14 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   {
     $calc = new Calculator;
     $calc->add('a', 'b');
+    $calc->sub('2', 'b');
+  }
+  
+  /**
+   * @dataProvider inputNumbersForSubstract
+   */
+  public function testCanSubstractNumber($x, $y, $sub)
+  {
+      $this->assertEquals($sub, $this->calculator->sub($x, $y));
   }
 }
