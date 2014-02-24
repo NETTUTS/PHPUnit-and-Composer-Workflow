@@ -50,6 +50,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     $calc = new Calculator;
     $calc->add('a', 'b');
     $calc->sub('2', 'b');
+    $calc->mul('3', 'c');
   }
   
   /**
