@@ -25,5 +25,12 @@ class Calculator {
       return $x * $y;
   }
   
+  public function div($x, $y)
+  {
+      if ( !is_numeric($x) || !is_numeric($y)) {
+          throw new \InvalidArgumentException;
+      }
+      return $x / $y;
+  }
   
 }

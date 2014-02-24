@@ -33,6 +33,13 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
       ];
   }
 
+  public function inputNumbersForDivide()
+  {
+      return [
+        [12, 6, 2],
+        [10, 5, 2]
+      ];
+  }
 
   /**
    * @dataProvider inputNumbersForSum
@@ -51,6 +58,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     $calc->add('a', 'b');
     $calc->sub('2', 'b');
     $calc->mul('3', 'c');
+    $calc->div('20', 'a');
   }
   
   /**
@@ -67,5 +75,13 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   public function testCanMultiplyNumbers($x, $y, $mul)
   {
       $this->assertEquals($mul, $this->calculator->mul($x, $y));
+  }
+  
+  /**
+   * @dataProvider inputNumbersForDivide
+   */
+  public function testCanDivideNumbers($x, $y, $div)
+  {
+      $this->assertEquals($div, $this->calculator->div($x, $y));
   }
 }
