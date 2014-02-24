@@ -9,7 +9,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     $this->calculator = new Calculator;
   }
 
-  public function inputNumbers()
+  public function inputNumbersForSum()
   {
     return [
       [2, 2, 4],
@@ -25,8 +25,17 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
       ];
   }
   
+  public function inputNumbersForMultiply()
+  {
+      return [
+        [2, 4, 8],
+        [10, 20, 200]
+      ];
+  }
+
+
   /**
-   * @dataProvider inputNumbers
+   * @dataProvider inputNumbersForSum
    */
   public function testCanAddNumbers($x, $y, $sum)
   {
@@ -49,5 +58,13 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   public function testCanSubstractNumber($x, $y, $sub)
   {
       $this->assertEquals($sub, $this->calculator->sub($x, $y));
+  }
+  
+  /**
+   * @dataProvider inputNumbersForMultiply
+   */
+  public function testCanMultiplyNumbers($x, $y, $mul)
+  {
+      $this->assertEquals($mul, $this->calculator->mul($x, $y));
   }
 }
