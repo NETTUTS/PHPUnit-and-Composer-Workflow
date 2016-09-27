@@ -33,8 +33,16 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     $this->calculator->add('a', 'b');
   }
 
+ public function minusNumbers()
+  {
+    return [
+      [4, 2, 2],
+      [2, 4, -2]
+    ];
+  }
+
   /**
-   * @dataProvider inputNumbers
+   * @dataProvider minusNumbers
    */
   public function testCanMinusNumbers($x, $y, $sum)
   {
@@ -48,7 +56,5 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   {
     $this->calculator->minus('a', 'b');
   }
-
-
 
 }
