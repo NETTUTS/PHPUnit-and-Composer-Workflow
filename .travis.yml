@@ -6,4 +6,7 @@ php:
   - '7.0'
   - hhvm
   - nightly
+notifications:
+  email: false
+  
   
