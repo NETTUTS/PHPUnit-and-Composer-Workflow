@@ -32,4 +32,23 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   {
     $this->calculator->add('a', 'b');
   }
+
+  /**
+   * @dataProvider inputNumbers
+   */
+  public function testCanMinusNumbers($x, $y, $sum)
+  {
+    $this->assertEquals($sum, $this->calculator->minus($x, $y));
+  }
+
+  /**
+    * @expectedException InvalidArgumentException
+    */
+  public function testThrowsExceptionIfNonNumberIsPassed()
+  {
+    $this->calculator->minus('a', 'b');
+  }
+
+
+
 }
