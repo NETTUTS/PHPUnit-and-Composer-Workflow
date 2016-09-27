@@ -61,7 +61,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   {
     return [
       [4, 2, 2],
-      [8, 2, 3+1] // wrong!
+      [8, 2, 4] 
     ];
   }
 
