@@ -25,7 +25,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($sum, $this->calculator->add($x, $y));
   }
 
- public function minusNumbers()
+ public function subNumbers()
   {
     return [
       [4, 2, 2],
@@ -34,11 +34,43 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @dataProvider minusNumbers
+   * @dataProvider subNumbers
    */
-  public function testCanMinusNumbers($x, $y, $sum)
+  public function testCanSubNumbers($x, $y, $sum)
   {
-    $this->assertEquals($sum, $this->calculator->minus($x, $y));
+    $this->assertEquals($sum, $this->calculator->sub($x, $y));
+  }
+
+ public function mulNumbers()
+  {
+    return [
+      [4, 2, 8],
+      [4, 4, 16]
+    ];
+  }
+
+  /**
+   * @dataProvider mulNumbers
+   */
+  public function testCanMulNumbers($x, $y, $sum)
+  {
+    $this->assertEquals($sum, $this->calculator->mul($x, $y));
+  }
+
+ public function divNumbers()
+  {
+    return [
+      [4, 2, 2],
+      [4, 4, 0]
+    ];
+  }
+
+  /**
+   * @dataProvider divNumbers
+   */
+  public function testCanDivNumbers($x, $y, $sum)
+  {
+    $this->assertEquals($sum, $this->calculator->div($x, $y));
   }
 
     /**
@@ -47,7 +79,9 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   public function testThrowsExceptionIfNonNumberIsPassed()
   {
     $this->calculator->add('a', 'b');
-    $this->calculator->minus('a', 'b');
+    $this->calculator->sub('a', 'b');
+    $this->calculator->mul('a', 'b');
+    $this->calculator->div('a', 'b');
   }
 
 }
