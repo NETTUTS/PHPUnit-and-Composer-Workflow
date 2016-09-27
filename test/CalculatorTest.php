@@ -30,7 +30,6 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     */
   public function testThrowsExceptionIfNonNumberIsPassed()
   {
-    $calc = new Calculator;
-    $calc->add('a', 'b');
+    $this->calculator->add('a', 'b');
   }
 }
