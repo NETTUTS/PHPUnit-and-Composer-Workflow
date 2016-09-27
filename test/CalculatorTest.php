@@ -29,7 +29,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
   {
     return [
       [4, 2, 2],
-      [2, 4, -2]
+      [2, 4, -2],
       [2, 4, 2]
     ];
   }
