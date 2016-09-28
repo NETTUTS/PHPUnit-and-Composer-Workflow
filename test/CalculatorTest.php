@@ -1,9 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use App\Libraries\Calculator;
 
-class CalculatorTest extends TestCase {
+class CalculatorTest extends PHPUnit_Framework_TestCase {
 
   public function setUp()
   {
